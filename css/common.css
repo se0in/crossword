@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* noto sans */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* Pretendard */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+/* Neo둥근모 */
+@font-face {
+  font-family: 'NeoDunggeunmo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* 둥근모꼴+ Fixedsys */
+@font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* reset */
+* {margin: 0; padding: 0;}
+li {list-style-type: none;}
+a {text-decoration: none; color: inherit;}
+img {display: block;}
+body {
+  font-family: 'NeoDunggeunmo','DungGeunMo', 'Pretendard-Regular', 'Noto Sans KR', sans-serif;
+  background-color: #008E8F;
+}
+button {background: none; border: none; outline: none; cursor: pointer; }
+
+/* 전체 폰트 사이즈 font-size 설정 */
+html {font-size: 14px;}
+@media (min-width : 769px) { /* web */
+  html {font-size: 16px;}
+}
+:root {
+  --border-white : 2px solid #fff;
+  --border-black : 2px solid #000;
+  --border-gray : 2px solid #BFBFBF;
+  --border-darkgray : 2px solid #888;
+  --main-gray: #BFBFBF;
+}
+
+.firstLetterUnder::first-letter {
+  text-decoration: underline;
+}

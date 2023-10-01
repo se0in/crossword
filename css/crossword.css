@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+#crossword {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 4px);
+  z-index: 100;
+}
+.gameWrap {
+  background-color: var(--main-gray);
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: var(--border-black);
+  border-right: var(--border-black);
+  width: 100%;
+}
+/* 탭 헤더 */
+.tabHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000078;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  border-left: var(--border-gray);
+  border-top: var(--border-gray);
+  border-right: var(--border-gray);
+}
+.tabHeader .title {
+  display: flex;
+}
+.tabHeader .title img {
+  width: 18px;
+  margin-right: 8px;
+}
+.tabHeader .title span {
+  color: #fff;
+  font-size: 18px;
+}
+.tabHeader .btns {
+  display: flex;
+}
+.tabHeader .btns button {
+  display: block;
+  background-color: var(--main-gray);
+  box-sizing: border-box;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  padding: 2px;
+  margin-left: 4px;
+  cursor: no-drop;
+}
+.tabHeader .btns button.close {
+  cursor: pointer;
+}
+.tabHeader .btns button img {
+  width: 14px;
+}
+/* 다시 시작, 정답보기 메뉴 */
+.gameWrap nav {
+  background-color: var(--main-gray);
+  padding: 0 2px;
+}
+.gameWrap nav ul {
+  display: flex;
+  margin-left: 10px;
+}
+.gameWrap nav ul li {
+  margin-right: 20px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+/* 게임, 설명 박스 */
+.contents {
+  border-top: var(--border-white);
+  border-left: var(--border-white);
+  border-bottom: var(--border-black);
+  border-right: var(--border-black);
+  margin: 0 8px;
+  width: calc(100% - 20px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+.crossword_container {
+  display: grid;
+  grid-template: repeat(10, calc(10vw - 6px)) / repeat(10, calc(10vw - 6px));
+}
+.crossword_container [class*=crossword_item] {
+  display: block;
+}
+.crossword_container input[type=text] {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  font-size: 1.25rem;
+  border: none;
+  box-shadow: inset 1px 1px 1px #000;
+  text-align: center;
+  font-family: 'NeoDunggeunmo';
+}
+.crossword_container .smallNumber {
+  position: relative;
+  
+}
+.crossword_container .smallNumber::after {
+  font-family: 'Pretendard-Regular';
+  /* content: ''; */
+  font-size: .625rem;
+  text-align: center;
+  top: 0;
+  left: .125rem;
+  z-index: 100;
+  position: absolute;
+}
+.crossword_container .crossword_item1-8.smallNumber::after {content: '6';}
+.crossword_container .crossword_item2-2.smallNumber::after {content: '1';}
+.crossword_container .crossword_item2-3.smallNumber::after {content: '2';}
+.crossword_container .crossword_item2-8.smallNumber::after {content: '7';}
+.crossword_container .crossword_item4-5.smallNumber::after {content: '5';}
+.crossword_container .crossword_item5-3.smallNumber::after {content: '3';}
+.crossword_container .crossword_item5-4.smallNumber::after {content: '4';}
+.crossword_container .crossword_item7-4.smallNumber::after {content: '8';}
+.crossword_container .crossword_item7-7.smallNumber::after {content: '10';}
+.crossword_container .crossword_item8-1.smallNumber::after {content: '9';}
+.crossword_container .crossword_item8-7.smallNumber::after {content: '11';}
+.crossword_container .crossword_item8-9.smallNumber::after {content: '13';}
+.crossword_container .crossword_item9-6.smallNumber::after {content: '12';}
+
+
+
+.crossword_container input[type=text]:focus {
+  background-color: #7070c9;
+  outline: none;
+  color: #fff;
+}
+.crossword_container span.blank_box {
+  background-color: #B9B9B9;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  box-shadow: inset -1px -1px 0  #9d9d9d;
+}
+
+
+
+
+
+.description {
+  width: 600px; 
+  padding: 10px;
+  box-sizing: border-box;
+  /* font-family: 'Pretendard-Regular'; */
+}
+.description h1 {
+  margin-bottom: 20px;
+}
+.description h1.top {
+  margin-top: 45px;
+}
+.description p {
+  display: flex;
+  margin-bottom: 5px;
+  line-height: 1.2;
+  font-size: 15px;
+}
+
+.description p span {
+  display: block;
+}
+.description p .number {
+  width: 25px;
+}
+.description p .des {
+  width: calc(100% - 25px);
+}
+.closeBtn {
+  margin: 8px 10px;
+  text-align: right;
+} 
+.closeBtn button {
+  height: 31px;
+  width: 116px;
+  border-top: var(--border-white);
+  border-left: var(--border-white);
+  border-bottom: var(--border-black);
+  border-right: var(--border-black);
+  /* background-color: blue; */
+  font-family: 'NeoDunggeunmo';
+  font-size: 15px;
+}
+.closeBtn button:active {
+  background-color: #ababab;
+  border-top: var(--border-black);
+  border-left: var(--border-black);
+  border-bottom: var(--border-white);
+  border-right: var(--border-white);
+}
+
+@media (min-width:678px) {
+  #crossword {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -53%);
+    width: 100%;
+    max-width: 1300px;
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .contents {
+    display: flex;
+    height: 70vh;
+    overflow-y: auto;
+  }
+  /* 스크롤바 디자인 */
+  .contents::-webkit-scrollbar { /* 전체 스타일 */
+    background-color: #DCDCDC;
+    width: 16px;
+  }
+  .contents::-webkit-scrollbar-thumb { /* 슬라이더(드래그바) */
+    background-color: #cccccc;
+    border-right: var(--border-black);
+    border-bottom: var(--border-black);
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+  }
+  .contents::-webkit-scrollbar-thumb:hover { /* 슬라이더(드래그바) 활성 상태 */
+    background-color: #cacaca;
+  }
+  .crossword_container {
+    grid-template: repeat(10, 40px) / repeat(10, 40px);
+  }
+  .description p {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1301px) {
+  .contents {
+    padding: 20px 0;
+  }
+  .crossword_container {
+    grid-template: repeat(10, 60px) / repeat(10, 60px);
+  }
+  .crossword_container input[type=text] {
+    font-size: 28px;
+  }
+}
