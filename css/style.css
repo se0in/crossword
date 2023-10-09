@@ -22,6 +22,10 @@
 .icon-box {
   width: 7rem; 
   height: 5.625rem;
+  cursor: no-drop;
+}
+.icon-box.game {
+  cursor: pointer;
 }
 .background-icon .icon-box:not(:last-child) {
   margin-bottom: 1.875rem;
@@ -35,6 +39,11 @@
   line-height: 1.2;
   color: #fff;
 }
+.icon-box.game:hover span {
+  background-color: #000078;
+}
+
+
 .background-taskbar {
   position: fixed;
   bottom: 0;
@@ -104,6 +113,14 @@
   border-right: var(--border-darkgray);
   padding: .1875rem;
   box-sizing: border-box;
+  font-family: 'NeoDunggeunmo';
+}
+.background-taskbar .current .current-crossword:active {
+  background-color: #ababab;
+  border-top: 2px solid #999;
+  border-left: 2px solid #999;
+  border-bottom: 2px solid #ddd;
+  border-right: 2px solid #ddd;
 }
 .background-taskbar .current .current-crossword img {
   width: 1.125rem;

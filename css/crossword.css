@@ -4,7 +4,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: calc(100% - 4px);
+  width: calc(100% - 3px);
   z-index: 100;
 }
 .gameWrap {
@@ -52,10 +52,17 @@
   border-right: 1px solid #000;
   padding: 2px;
   margin-left: 4px;
+  cursor: pointer;
+}
+.tabHeader .btns button.disabled {
   cursor: no-drop;
 }
-.tabHeader .btns button.close {
-  cursor: pointer;
+.tabHeader .btns button:active {
+  background-color: #ababab;
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 .tabHeader .btns button img {
   width: 14px;
@@ -109,7 +116,6 @@
 }
 .crossword_container .smallNumber {
   position: relative;
-  
 }
 .crossword_container .smallNumber::after {
   font-family: 'Pretendard-Regular';
@@ -138,10 +144,11 @@
 
 
 .crossword_container input[type=text]:focus {
-  background-color: #7070c9;
+  background-color: #000078 !important;
   outline: none;
-  color: #fff;
+  color: #fff !important;
 }
+
 .crossword_container span.blank_box {
   background-color: #B9B9B9;
   border-top: 1px solid #fff;
@@ -150,11 +157,6 @@
   border-right: 1px solid #000;
   box-shadow: inset -1px -1px 0  #9d9d9d;
 }
-
-
-
-
-
 .description {
   width: 600px; 
   padding: 10px;
@@ -205,6 +207,8 @@
   border-right: var(--border-white);
 }
 
+
+/* web */
 @media (min-width:678px) {
   #crossword {
     top: 50%;
@@ -215,6 +219,10 @@
     z-index: 100;
     box-sizing: border-box;
     padding: 20px;
+  }
+  /* popup */
+  .popup.howToPlay .popupContents {
+    flex-direction: row;
   }
   .contents {
     display: flex;
@@ -234,7 +242,7 @@
     border-top: 1px solid #fff;
   }
   .contents::-webkit-scrollbar-thumb:hover { /* 슬라이더(드래그바) 활성 상태 */
-    background-color: #cacaca;
+    background-color: #a8a8a8;
   }
   .crossword_container {
     grid-template: repeat(10, 40px) / repeat(10, 40px);
@@ -242,6 +250,8 @@
   .description p {
     font-size: 17px;
   }
+
+
 }
 
 @media (min-width: 1301px) {

@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+/* popup */
+/* #popupBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+  } */
+  .popup {
+    position: absolute;
+    max-width: 350px;
+    width: calc(100% - 40px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 900;
+    background-color: var(--main-gray);
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: var(--border-black);
+    border-bottom: var(--border-black);
+  }
+  
+  .popup .popupHeader {
+    background-color: #000078;
+    border-left: 1px solid var(--main-gray);
+    border-top: 1px solid var(--main-gray);
+    border-right: 1px solid var(--main-gray);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 6px;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+  .popup button.close {
+    display: block;
+    background-color: var(--main-gray);
+    box-sizing: border-box;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    padding: 1px;
+  }
+  .popup button.close:active {
+    background-color: #ababab;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+  .popup .popupContents {
+    
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
+  }
+  .popup.replay .popupContents {
+    padding: 30px 10px;
+  }
+  .popup .popupContents img {
+    width: 100%;
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+  }
+  .popup.howToPlay .popupContents img {
+    max-height: 250px;
+    background-color: #55AAAA;
+  }
+  .popup .popupContents .textBox {
+    padding: 10px 0;
+  }
+  .popup .popupContents .textBox p {
+    margin-bottom: 10px;
+    line-height: 1.1;
+    text-align: left;
+  }
+  .popup .popupButton {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .popup .popupButton button {
+    width: 135px;
+    padding: 9px 0;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    font-family: var();
+    font-family: 'NeoDunggeunmo';
+    font-size: 15px;
+  }
+  .popup .popupButton button:active {
+    background-color: #ababab;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+  }
+  
+
+  @media (min-width:678px) {
+    /* popup */
+    .popup.howToPlay,
+    .popup.answer {
+      max-width: 500px;
+    }
+    .popup.howToPlay .popupContents {
+      display: flex;
+      gap: 15px;
+    }
+    .popup.howToPlay .popupButton {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
