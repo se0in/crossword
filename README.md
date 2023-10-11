@@ -1,6 +1,5 @@
 # crossword
 Windows 98컨셉 가로세로 낱말퀴즈
-***
 <br>
 ## 📣 프로젝트 소개
 - 개인프로젝트
@@ -14,7 +13,6 @@ Windows 98컨셉 가로세로 낱말퀴즈
 - Visual Studio Code
     - html, css, javascript, jQuery 
 
-***
 <br>
 
 ## 🎮 주요기능
@@ -36,7 +34,6 @@ Windows 98컨셉 가로세로 낱말퀴즈
 |![image](./img/readme/how_to_play.png)|![image](./img/readme/replay.png)|![image](./img/readme/answer.png)|
 |게임 방법 클릭 시 팝업|다시 시작 클릭 시 입력값 전체 삭제|정답 이미지 팝업|
 
----
 <br>
 
 ## 📌 프로젝트 작업하며 습득한 코드
