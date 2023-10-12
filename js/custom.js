@@ -129,62 +129,94 @@ for (let row = 1; row <= rowCount; row++) {
   }
 }
 
-//html description 요소(1~13) 선택 
-const descriptionCount = 13; 
-for(let num = 1; num <= descriptionCount; num++){
-  let selector = `.desNum${num}`;
-  window[`description${num}`] = document.querySelector(selector);
+
+//desNumRow/Col (html 설명) 각각 불러오는 법
+function createDescriptions(count, row) {
+  for (let num = 1; num <= count; num++) {
+    const selector = row ? `.desNumRow${num}` : `.desNumCol${num}`;
+    window[`description${row ? "Row" : "Col"}${num}`] = document.querySelector(selector);
+  }
 }
+const descriptionCount = 13;//중복 미포함 설명란 최대 숫자
+createDescriptions(descriptionCount, true); // 가로
+createDescriptions(descriptionCount, false); // 세로
+
 
 //mouseenter 이벤트
-function addMouseEnterHandler(description, inputs) {
-  description.addEventListener("mouseenter", function () {
+//삼항 연산자를 이용한 이벤트 등록 방법
+function addMouseHandler(description, inputs, isMouseEnter) {
+  const bgColor = isMouseEnter ? "#a4a4f4" : "#fff";
+  const textColor = isMouseEnter ? "#fff" : "#000";
+  
+  description.addEventListener(isMouseEnter ? "mouseenter" : "mouseleave", function () {
     for (let input of inputs) {
-      input.style.backgroundColor = "#a4a4f4";
-      input.style.color = "#fff";
-    }
-  });
-}
-//mouseleave 이벤트
-function addMouseLeaveHandler(description, inputs) {
-  description.addEventListener("mouseleave", function () {
-    for (let input of inputs) {
-      input.style.backgroundColor = "#fff";
-      input.style.color = "#000";
+      input.style.backgroundColor = bgColor;
+      input.style.color = textColor;
     }
   });
 }
 
 // 배열로 정의
-const descriptions = [
-  description1, description2, description3, description4, description5,
-  description7, description8, description9, description10, description11,
-  description12, description13
+// 가로 description 요소 배열
+const descriptionsRow = [
+  descriptionRow1,
+  descriptionRow3,
+  descriptionRow5,
+  descriptionRow7,
+  descriptionRow8,
+  descriptionRow9,
+  descriptionRow11,
+  descriptionRow12
 ];
 
-const inputLists = [
+// 세로 description 요소 배열
+const descriptionsCol = [
+  descriptionCol2,
+  descriptionCol4,
+  descriptionCol5,
+  descriptionCol6,
+  descriptionCol10,
+  descriptionCol13
+];
+
+// 가로 input 배열
+const inputListsRow = [
   [input2_2, input2_3, input2_4],
-  [input2_3, input3_3, input4_3, input5_3],
   [input5_3, input5_4, input5_5],
-  [input5_4, input6_4, input7_4, input8_4],
   [input4_5, input4_6, input4_7, input4_8],
   [input2_8, input2_9, input2_10],
   [input7_4, input7_5, input7_6, input7_7],
   [input8_1, input8_2, input8_3, input8_4],
-  [input7_7, input8_7, input9_7],
   [input8_7, input8_8, input8_9],
-  [input9_6, input9_7],
+  [input9_6, input9_7]
+];
+
+// 세로 input 배열
+const inputListCol = [
+  [input2_3, input3_3, input4_3, input5_3],
+  [input5_4, input6_4, input7_4, input8_4],
+  [input4_5, input5_5],
+  [input1_8, input2_8, input3_8, input4_8],
+  [input7_7, input8_7, input9_7],
   [input8_9, input9_9, input10_9]
 ];
 
-// for문으로 반복되는 함수 호출
-for (let i = 0; i < descriptions.length; i++) {
-  const description = descriptions[i];
-  const inputList = inputLists[i];
-  
-  addMouseEnterHandler(description, inputList);
-  addMouseLeaveHandler(description, inputList);
+//가로와 세로 description 배열을 하나로 합치기
+//스프레드 연산자(...) 사용
+const allDescriptions = [...descriptionsRow, ...descriptionsCol];
+const allInputs = [...inputListsRow, ...inputListCol];
+
+// 이벤트 핸들러 추가
+for (let i = 0; i < allDescriptions.length; i++) {
+  const description = allDescriptions[i];
+  const inputList = allInputs[i];
+
+  if (description && inputList) {
+    addMouseHandler(description, inputList, true);  // Mouse Enter 이벤트 추가
+    addMouseHandler(description, inputList, false); // Mouse Leave 이벤트 추가
+  }
 }
+
 
 
 
