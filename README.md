@@ -1,5 +1,5 @@
 # crossword
-배포 링크 : https://seoin-crossword.netlify.app  
+✨ 링크 : https://seoin-crossword.netlify.app ✨  
 <br>
 Windows 98컨셉 가로세로 낱말퀴즈
 <br>
