@@ -1,7 +1,10 @@
 # crossword
 배포 링크 : https://seoin-crossword.netlify.app  
+<br>
 Windows 98컨셉 가로세로 낱말퀴즈
 <br>
+
+
 ## 📣 프로젝트 소개
 - 개인프로젝트
 - 새롭게 배운 css display:grid; 속성을 이용한 crossword(가로세로 낱말퀴즈) 페이지
